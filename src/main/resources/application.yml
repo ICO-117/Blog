@@ -1,0 +1,32 @@
+spring:            #全局配置
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates
+    mode: HTML
+    suffix: .html
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+  profiles:
+    active: dev
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+
+#gzip压缩
+server:
+  tomcat:
+    remote-ip-header: x-forwarded-for
+    protocol-header: x-forwarded-proto
+    port-header: X-Forwarded-Port
+    use-forward-headers: true
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+  port: 8050
+
+
+
+
+
